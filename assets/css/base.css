@@ -1,0 +1,155 @@
+/* =====================================================================
+   INSIDE MATTER — stile di base condiviso da tutto il sito
+   Colori, caratteri, impaginazione, barra superiore, scene.
+   Per cambiare l'aspetto di TUTTI i moduli, modifica i token qui sotto.
+   ===================================================================== */
+
+/* ---------- Caratteri (file locali in assets/fonts: funzionano anche offline) ---------- */
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/manrope-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/manrope-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/manrope-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/manrope-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/jetbrains-mono-latin-600-normal.woff2) format("woff2")}
+
+:root{
+  /* Impaginazione: scene a tutta larghezza su fondo scuro; ogni scena ha una composizione diversa */
+  --bg:#04060d;          /* fondo */
+  --bg-2:#0a1122;        /* superfici */
+  --ink:#eef3ff;         /* testo principale */
+  --mut:#a3afc9;         /* testo secondario */
+  --dim:#5d6987;         /* etichette deboli */
+  --line:rgba(150,178,235,.15);
+
+  /* codice colore dei sottolivelli, usato in TUTTO il sito */
+  --s:#5cd6ff;           /* s: ciano */
+  --p:#a493ff;           /* p: viola */
+  --d:#ffb35c;           /* d: ambra */
+  --f:#ff86ad;           /* f: rosa */
+  --val:#ff9a52;         /* elettroni di valenza: arancio */
+  --ok:#5ce0a0; --no:#ff6b6b;
+
+  --acc:var(--s);        /* accento del modulo (sovrascritto dal modulo) */
+
+  --disp:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --body:"Manrope","Segoe UI","Helvetica Neue",system-ui,sans-serif;
+  --mono:"JetBrains Mono","SF Mono",Consolas,ui-monospace,monospace;
+
+  --gutter:clamp(18px,4.2vw,72px);
+  --maxw:1440px;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,canvas{max-width:100%;display:block}
+button,input{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+::selection{background:rgba(92,214,255,.3)}
+
+/* ---------- Tipografia ---------- */
+h1,h2,h3{font-family:var(--disp);font-weight:400;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(54px,9vw,148px);line-height:.92}
+h2{font-size:clamp(38px,4.6vw,76px);line-height:1}
+h3{font-size:clamp(26px,2.2vw,36px);line-height:1.1}
+h2 em,h1 em,h3 em{font-style:italic;color:var(--acc)}
+p{margin:0 0 .9em}
+.lead{font-size:clamp(18px,1.45vw,22px);line-height:1.55;color:var(--mut);max-width:44ch}
+.lead b,.testo b{color:var(--ink);font-weight:600}
+.testo{max-width:62ch;color:#c9d2e6}
+.occhiello{display:flex;align-items:center;gap:14px;font:500 12.5px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin:0 0 22px}
+.occhiello::before{content:attr(data-n);color:var(--dim)}
+.mono{font-family:var(--mono)}
+.piccolo{font-size:14px;color:var(--mut)}
+
+/* configurazioni elettroniche: 1s² 2s² ... */
+.cfg{font-family:var(--mono);font-weight:500;letter-spacing:.01em;white-space:nowrap}
+.cfg sup{font-size:.62em;vertical-align:.72em;line-height:0;margin-left:.04em}
+.cfg .t{display:inline-block;margin-right:.42em;transition:color .25s,opacity .25s}
+.cfg .t:last-child{margin-right:0}
+.cfg .core{color:var(--mut)}
+.l-s{color:var(--s)}.l-p{color:var(--p)}.l-d{color:var(--d)}.l-f{color:var(--f)}
+
+/* ---------- Barra superiore ---------- */
+.barra{position:fixed;inset:0 0 auto 0;z-index:60;height:58px;display:flex;align-items:center;gap:20px;padding:0 var(--gutter);
+  background:linear-gradient(rgba(4,6,13,.9),rgba(4,6,13,.62));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.barra .marchio{font:500 13px var(--mono);letter-spacing:.34em;text-decoration:none;white-space:nowrap;color:var(--ink)}
+.barra .marchio b{font-weight:500;color:var(--acc)}
+.barra .titolo-mod{font:400 19px var(--disp);color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.barra nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.barra nav a{display:grid;place-items:center;min-width:32px;height:32px;padding:0 6px;border-radius:999px;font:500 12px var(--mono);color:var(--dim);text-decoration:none;transition:color .2s,background .2s}
+.barra nav a:hover{color:var(--ink);background:rgba(150,178,235,.08)}
+.barra nav a.on{color:var(--bg);background:var(--acc)}
+.progresso{position:fixed;top:58px;left:0;height:2px;width:0;z-index:61;background:var(--acc);box-shadow:0 0 14px var(--acc);transition:width .1s linear}
+
+/* ---------- Scene ---------- */
+.scena{position:relative;padding:clamp(96px,12vh,150px) var(--gutter) clamp(72px,10vh,120px);scroll-margin-top:58px}
+.scena>.dentro{max-width:var(--maxw);margin:0 auto}
+.scena.piena{min-height:100vh;min-height:100svh;display:flex;align-items:center}
+.scena.piena>.dentro{width:100%}
+.scena+.scena{border-top:1px solid rgba(150,178,235,.07)}
+.scena .numero-fondo{position:absolute;right:var(--gutter);top:clamp(70px,9vh,110px);font:400 clamp(120px,18vw,300px)/.8 var(--disp);color:rgba(150,178,235,.045);pointer-events:none;user-select:none}
+
+.griglia-2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,96px);align-items:center}
+.griglia-2.inversa{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.griglia-2.inversa>:first-child{order:2}
+.griglia-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.testata{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,90px);align-items:end;margin-bottom:clamp(36px,5vh,64px)}
+.testata .lead{margin:0}
+.centro{text-align:center}.centro .lead{margin-left:auto;margin-right:auto}
+
+/* pannelli e note */
+.pannello{border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(18,28,56,.55),rgba(8,12,26,.55));padding:clamp(18px,2vw,30px)}
+.nota{border-left:2px solid var(--d);padding:4px 0 4px 16px;font-size:15px;color:var(--mut);max-width:62ch}
+.nota b{color:var(--ink)}
+.nota::before{content:"Precisazione";display:block;font:600 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--d);margin-bottom:4px}
+.def{font-size:clamp(20px,1.7vw,26px);line-height:1.45;font-family:var(--disp);color:var(--ink);max-width:36ch}
+.def b{font-weight:400;font-style:italic;color:var(--acc)}
+
+/* controlli */
+.btn{text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(150,178,235,.06);border-radius:999px;padding:9px 18px;font-size:14.5px;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.btn:hover{border-color:rgba(150,178,235,.45)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#03121a;font-weight:600}
+.btn[disabled]{opacity:.4;cursor:default}
+.controlli{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1px solid var(--line);background:transparent;border-radius:10px;padding:8px 14px;cursor:pointer;font-size:15px;transition:all .2s}
+.chip:hover{border-color:rgba(150,178,235,.45)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:600}
+.schede{display:flex;flex-wrap:wrap;gap:6px}
+
+/* comparsa progressiva: il contenuto resta visibile se JavaScript non parte */
+html.js-rivela [data-rivela]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+html.js-rivela [data-rivela].visto{opacity:1;transform:none}
+html.js-rivela [data-rivela="2"]{transition-delay:.12s}
+html.js-rivela [data-rivela="3"]{transition-delay:.24s}
+html.js-rivela [data-rivela="4"]{transition-delay:.36s}
+
+/* fondo del sito: piede */
+.piede{padding:60px var(--gutter) 80px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
+.piede .dentro{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+.piede a{color:var(--mut)}
+.prossimo{display:flex;flex-direction:column;gap:4px;text-decoration:none;padding:18px 22px;border:1px solid var(--line);border-radius:14px;min-width:260px}
+.prossimo:hover{border-color:var(--acc)}
+.prossimo span{font:500 11.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.prossimo b{font:400 24px var(--disp);color:var(--ink)}
+
+@media (max-width:1000px){
+  .barra .titolo-mod{display:none}
+  .griglia-2,.griglia-2.inversa,.testata{grid-template-columns:1fr}
+  .griglia-2.inversa>:first-child{order:0}
+  .griglia-3{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .barra nav{display:none}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js-rivela [data-rivela]{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+}

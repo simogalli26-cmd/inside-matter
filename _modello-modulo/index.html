@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 1. Cambia il titolo della pagina -->
+<title>Titolo del modulo · INSIDE MATTER</title>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<link rel="stylesheet" href="../../assets/css/componenti.css">
+<link rel="stylesheet" href="modulo.css">
+</head>
+
+<!-- =====================================================================
+     MODELLO DI MODULO
+     Come usarlo:
+     1. copia questa cartella dentro  moduli/  e rinominala
+        (es.  moduli/02-tavola-periodica)
+     2. scrivi lo stesso nome in  data-modulo  qui sotto
+     3. aggiungi il modulo in  catalogo.js  con  stato: 'pubblicato'
+     4. scrivi le scene: ogni <section class="scena"> è un capitolo
+        e compare da solo nella barra in alto.
+
+     Attributi utili di una scena:
+       data-titolo="..."   nome del capitolo (obbligatorio per la barra)
+       data-breve="01"     etichetta corta nella barra
+       class="scena piena" la scena occupa almeno tutto lo schermo
+
+     Impaginazioni pronte (in assets/css/base.css):
+       .griglia-2           testo a sinistra, figura a destra
+       .griglia-2.inversa   figura a sinistra, testo a destra
+       .testata             titolo a sinistra, introduzione a destra
+       .centro              tutto centrato
+       .griglia-3           tre colonne
+
+     Elementi di testo pronti:
+       .occhiello data-n="01"   piccola etichetta sopra il titolo
+       <h2>Testo <em>evidenziato</em></h2>
+       .lead   introduzione      .testo   paragrafi      .def   definizione
+       .nota   precisazione oltre il libro (con riquadro ambra)
+       .pannello   riquadro per un'interazione
+
+     data-rivela="1|2|3|4" fa comparire un elemento quando entra in vista.
+
+     Componenti interattivi già pronti (riusabili in ogni modulo):
+       data-componente="nube-orbitale"     orbitali 3D (data-iniziale="2p")
+       data-componente="scala-energetica"  diagramma orbitalico (data-elemento="Fe")
+       data-componente="tavola"            primi 36 elementi esplorabili
+       data-componente="livelli-atomo"     livelli di un atomo (data-elemento="Na")
+       data-componente="quiz"              domande a scelta multipla (vedi sotto)
+     Per un componente nuovo: crea un file in assets/js/componenti/,
+     registralo con  IM.componente('nome', function (el, opzioni) { ... })
+     e aggiungi il suo <script> in fondo a questa pagina.
+     ===================================================================== -->
+<body data-modulo="00-nome-del-modulo" data-radice="../../">
+
+<main>
+
+<!-- SCENA DI APERTURA -->
+<section class="scena piena" id="apertura" data-titolo="Apertura" data-breve="00">
+  <div class="dentro">
+    <p class="occhiello" data-n="Modulo 00">Materia</p>
+    <h1>Titolo del<br><em>modulo</em></h1>
+    <p class="lead" style="margin-top:24px">Una frase che spiega che cosa si scoprirà in questo modulo.</p>
+  </div>
+</section>
+
+<!-- SCENA CON TESTO E FIGURA -->
+<section class="scena piena" id="concetto" data-titolo="Primo concetto" data-breve="01">
+  <span class="numero-fondo" aria-hidden="true">01</span>
+  <div class="dentro griglia-2">
+    <div>
+      <p class="occhiello" data-n="01" data-rivela>Argomento</p>
+      <h2 data-rivela>Un concetto <em>chiave</em></h2>
+      <p class="def" data-rivela="2" style="margin-top:24px">La definizione, con la parte importante <b>evidenziata</b>.</p>
+      <div class="testo" data-rivela="3"><p>Spiegazione breve: poche frasi, chiare.</p></div>
+    </div>
+    <div class="pannello" data-rivela="2">
+      <!-- Esempio di componente già pronto: -->
+      <div data-componente="scala-energetica" data-elemento="Na" data-vuoti="1" data-controlli="si"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENA QUIZ: "giusta" è l'indice della risposta corretta, partendo da 0 -->
+<section class="scena" id="quiz" data-titolo="Quiz" data-breve="?">
+  <div class="dentro griglia-2">
+    <div><h2>Verifica</h2></div>
+    <div class="pannello" data-componente="quiz">
+      <script type="application/json">
+      [
+        {"domanda":"Testo della domanda?", "opzioni":["A","B","C","D"], "giusta":0, "spiegazione":"Perché la risposta giusta è A."}
+      ]
+      </script>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Script: tieni sempre i primi tre, poi solo i componenti che usi -->
+<script src="../../catalogo.js"></script>
+<script src="../../assets/js/chimica.js"></script>
+<script src="../../assets/js/core.js"></script>
+<script src="../../assets/js/componenti/scala-energetica.js"></script>
+<script src="../../assets/js/componenti/regole.js"></script>
+<script src="../../assets/js/componenti/quiz.js"></script>
+</body>
+</html>

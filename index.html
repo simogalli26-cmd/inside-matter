@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INSIDE MATTER · Dentro la materia</title>
+<meta name="description" content="Un progetto di Scienze Naturali: viaggi visivi e interattivi dentro la struttura della materia, un modulo alla volta.">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body class="home">
+
+<!-- HOME — l'elenco dei moduli si costruisce da catalogo.js: qui non serve modificare nulla
+     quando aggiungi un capitolo. -->
+<header class="h-barra">
+  <span class="marchio mono">INSIDE <b>MATTER</b></span>
+  <span class="mono piccolo">Scienze Naturali · Chimica</span>
+</header>
+
+<main>
+  <section class="h-eroe">
+    <div class="h-arte" data-componente="copertina"></div>
+    <div class="h-testo">
+      <p class="occhiello" data-n="Progetto">in continuo aggiornamento</p>
+      <h1>Inside<br><em>Matter</em></h1>
+      <p class="sottotitolo">Dentro la materia</p>
+      <p class="lead">Viaggi visivi nella struttura degli atomi e delle molecole. Ogni modulo parte da qualcosa che si può vedere e scende, scala dopo scala, fino a ciò che lo spiega.</p>
+      <a class="btn pri h-inizia" id="inizia" href="moduli/01-configurazione-elettronica/index.html">Inizia dal modulo 01</a>
+    </div>
+  </section>
+
+  <section class="h-moduli" aria-labelledby="titolo-moduli">
+    <div class="h-moduli-testa">
+      <h2 id="titolo-moduli">Moduli</h2>
+      <p class="piccolo" id="conta-moduli"></p>
+    </div>
+    <ol class="indice" id="indice"></ol>
+  </section>
+</main>
+
+<footer class="piede"><div class="dentro">
+  <p>INSIDE MATTER · progetto di Scienze Naturali per il liceo scientifico.</p>
+  <p class="piccolo">Contenuti verificati sul libro di testo; le precisazioni oltre il libro sono segnalate nel sito.</p>
+</div></footer>
+
+<script src="catalogo.js"></script>
+<script>
+/* Costruisce l'indice dei moduli dal catalogo */
+(function () {
+  var cat = (window.IM_CATALOGO || []).filter(function (m) { return m.stato !== 'nascosto'; });
+  var ol = document.getElementById('indice'), pubblicati = 0;
+  cat.forEach(function (m) {
+    var attivo = m.stato === 'pubblicato'; if (attivo) pubblicati++;
+    var li = document.createElement('li');
+    li.className = 'voce' + (attivo ? '' : ' futura');
+    li.style.setProperty('--c', m.colore || '#5cd6ff');
+    li.innerHTML = (attivo ? '<a href="moduli/' + m.id + '/index.html">' : '<div>') +
+      '<span class="v-num">' + m.numero + '</span>' +
+      '<span class="v-corpo"><span class="v-mat mono">' + m.materia + (attivo ? '' : ' · in preparazione') + '</span>' +
+      '<b class="v-tit">' + m.titolo + '</b><span class="v-sotto">' + m.sottotitolo + '</span></span>' +
+      '<span class="v-vai mono">' + (attivo ? 'apri →' : '') + '</span>' + (attivo ? '</a>' : '</div>');
+    ol.appendChild(li);
+  });
+  document.getElementById('conta-moduli').textContent = pubblicati + (pubblicati === 1 ? ' modulo disponibile' : ' moduli disponibili');
+  var primo = cat.filter(function (m) { return m.stato === 'pubblicato'; })[0];
+  if (primo) { var a = document.getElementById('inizia'); a.href = 'moduli/' + primo.id + '/index.html'; a.textContent = 'Inizia dal modulo ' + primo.numero; }
+})();
+</script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/componenti/nube-orbitale.js"></script>
+</body>
+</html>

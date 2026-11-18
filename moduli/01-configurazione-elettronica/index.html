@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La configurazione elettronica · INSIDE MATTER</title>
+<meta name="description" content="Modulo 01 di INSIDE MATTER: come si dispongono gli elettroni negli orbitali e perché questo decide il comportamento chimico.">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<link rel="stylesheet" href="../../assets/css/componenti.css">
+<link rel="stylesheet" href="modulo.css">
+</head>
+
+<!-- data-modulo: deve coincidere con l'id nel catalogo.js
+     data-radice: percorso per tornare alla cartella principale del sito -->
+<body data-modulo="01-configurazione-elettronica" data-radice="../../">
+
+<main>
+
+<!-- ================================================================
+     00 · IL VIAGGIO — dalla materia all'atomo (guidato dallo scorrimento)
+     Ogni <div class="battuta"> è un'inquadratura del viaggio.
+     ================================================================ -->
+<section class="scena viaggio" id="viaggio" data-titolo="Il viaggio" data-breve="00">
+  <div class="viaggio-binario">
+  <div class="viaggio-palco" data-componente="viaggio">
+    <canvas aria-hidden="true"></canvas>
+    <div class="viaggio-scala" aria-hidden="true">
+      <span class="v-k">campo visivo</span>
+      <span class="v-misura">4 cm</span>
+      <span class="v-cosa">frammento di potassio</span>
+    </div>
+  </div>
+  </div>
+
+  <div class="battuta apertura">
+    <div>
+      <p class="occhiello" data-n="Modulo 01">Chimica</p>
+      <h1>Inside<br><em>Matter</em></h1>
+      <p class="sottotitolo">Dentro la materia · un viaggio visivo nella struttura elettronica degli atomi</p>
+      <p class="lead">Il comportamento chimico di un elemento dipende da come sono disposti i suoi elettroni. Per capirlo, dobbiamo entrare nella materia.</p>
+      <p class="scorri mono">scorri per entrare</p>
+    </div>
+  </div>
+  <div class="battuta"><div>
+    <h2>Un frammento di <em>potassio</em></h2>
+    <p class="lead">È un metallo così tenero che si taglia con un coltello. Si conserva sotto olio minerale: a contatto con l'acqua reagisce con violenza. <b>Perché?</b></p>
+  </div></div>
+  <div class="battuta"><div>
+    <h2>Il reticolo</h2>
+    <p class="lead">A questa scala il metallo non è più liscio: gli atomi sono disposti in un reticolo ordinato. In un centimetro cubo di potassio ce ne sono circa 10<sup>22</sup>.</p>
+  </div></div>
+  <div class="battuta"><div>
+    <h2>Un atomo</h2>
+    <p class="lead">Un singolo atomo di potassio misura circa <b>mezzo nanometro</b>.</p>
+  </div></div>
+  <div class="battuta"><div>
+    <h2>Il nucleo</h2>
+    <p class="lead">Al centro c'è il nucleo, con 19 protoni: decine di migliaia di volte più piccolo dell'atomo. Tutto il resto è lo spazio degli <b>elettroni</b>.</p>
+  </div></div>
+  <div class="battuta"><div>
+    <h2>19 elettroni, in <em>livelli</em></h2>
+    <p class="lead">Gli elettroni non sono sparsi a caso: si organizzano in livelli di energia. Nel potassio <b class="mono">2 · 8 · 8 · 1</b>. Il modo in cui sono distribuiti si chiama <b>configurazione elettronica</b>.</p>
+  </div></div>
+  <div class="battuta"><div>
+    <h2>Un solo elettrone <em>esterno</em></h2>
+    <p class="lead">Il potassio ha un solo elettrone nel livello più esterno. È lui a spiegare perché reagisce così facilmente. Vediamo come.</p>
+  </div></div>
+</section>
+
+<!-- ================================================================
+     01 · CHE COS'È LA CONFIGURAZIONE ELETTRONICA
+     ================================================================ -->
+<section class="scena piena" id="definizione" data-titolo="Che cos'è" data-breve="01">
+  <span class="numero-fondo" aria-hidden="true">01</span>
+  <div class="dentro griglia-2">
+    <div>
+      <p class="occhiello" data-n="01" data-rivela>Definizione</p>
+      <h2 data-rivela>Che cos'è la <em>configurazione elettronica</em></h2>
+      <p class="def" data-rivela="2" style="margin-top:28px">La configurazione elettronica di un atomo è <b>il modo in cui i suoi elettroni sono distribuiti negli orbitali</b>.</p>
+      <div class="testo" data-rivela="3">
+        <p>Si scrive come una sequenza di simboli. Per il potassio:</p>
+        <p class="cfg grande-cfg"><span class="t l-s">1s<sup>2</sup></span><span class="t l-s">2s<sup>2</sup></span><span class="t l-p">2p<sup>6</sup></span><span class="t l-s">3s<sup>2</sup></span><span class="t l-p">3p<sup>6</sup></span><span class="t l-s val">4s<sup>1</sup></span></p>
+        <p>Tra poco imparerai a leggerla. Intanto nota l'ultimo termine: è l'elettrone del livello più esterno. Gli elettroni del livello più esterno si chiamano <b>elettroni di valenza</b>: sono loro a formare i legami e a prendere parte alle reazioni.</p>
+      </div>
+    </div>
+    <figure data-rivela="2">
+      <div data-componente="livelli-atomo" data-elemento="K"></div>
+      <figcaption class="piccolo">Schema dei livelli del potassio. Le distanze non sono in scala e gli elettroni non girano su orbite: ogni livello è una regione di spazio attorno al nucleo.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================================================================
+     02 · LIVELLI, SOTTOLIVELLI, ORBITALI
+     ================================================================ -->
+<section class="scena" id="struttura" data-titolo="Livelli, sottolivelli, orbitali" data-breve="02">
+  <span class="numero-fondo" aria-hidden="true">02</span>
+  <div class="dentro">
+    <div class="testata">
+      <div>
+        <p class="occhiello" data-n="02" data-rivela>La struttura</p>
+        <h2 data-rivela>Livelli, sottolivelli, <em>orbitali</em></h2>
+      </div>
+      <p class="lead" data-rivela="2">Tre parole che si incastrano una dentro l'altra, come scatole: ogni livello contiene dei sottolivelli, ogni sottolivello contiene degli orbitali.</p>
+    </div>
+
+    <div class="scatole">
+      <article class="scatola s1" data-rivela>
+        <p class="mono">livello di energia · n</p>
+        <h3>Livello</h3>
+        <p>Indicato da un numero intero: n = 1, 2, 3… Più n è alto, più gli elettroni hanno energia e stanno in media lontani dal nucleo. Il livello n contiene al massimo <b>2n²</b> elettroni.</p>
+        <article class="scatola s2">
+          <p class="mono">s · p · d · f</p>
+          <h3>Sottolivello</h3>
+          <p>Ogni livello si divide in sottolivelli, indicati con le lettere s, p, d, f. Il livello n ne ha n: il livello 1 solo s, il livello 2 s e p, il livello 3 s, p e d.</p>
+          <article class="scatola s3">
+            <p class="mono">max 2 elettroni</p>
+            <h3>Orbitale</h3>
+            <p>La regione di spazio attorno al nucleo in cui è massima la probabilità di trovare un elettrone. Contiene al massimo <b>due elettroni</b>. Nei diagrammi si disegna come una casella.</p>
+          </article>
+        </article>
+      </article>
+      <div class="esploratore" data-rivela="2">
+        <p class="mono piccolo">Scegli un livello</p>
+        <div data-componente="struttura-livelli" data-livello="3"></div>
+        <div class="legenda-sotto mono">
+          <span class="l-s">s · 1 orbitale · 2 e⁻</span><span class="l-p">p · 3 orbitali · 6 e⁻</span><span class="l-d">d · 5 orbitali · 10 e⁻</span><span class="l-f">f · 7 orbitali · 14 e⁻</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scena piena" id="orbitali" data-titolo="La forma degli orbitali" data-breve="2b">
+  <div class="dentro griglia-2 inversa">
+    <div>
+      <p class="occhiello" data-n="02" data-rivela>La forma degli orbitali</p>
+      <h2 data-rivela>Non orbite, ma <em>nubi</em></h2>
+      <div class="testo" data-rivela="2" style="margin-top:24px">
+        <p>Non possiamo sapere esattamente dove si trova un elettrone in un dato istante: possiamo solo dire <b>dove è più probabile trovarlo</b>. L'orbitale è proprio questa zona di probabilità.</p>
+        <p>Gli orbitali <span class="l-s">s</span> sono sferici, i <span class="l-p">p</span> hanno due lobi, i <span class="l-d">d</span> hanno forme più complesse.</p>
+      </div>
+      <p class="nota" data-rivela="3">Gli orbitali di uno stesso sottolivello, per esempio i tre 2p, hanno <b>la stessa energia</b>: si dicono <b>degeneri</b>. Ci servirà per la regola di Hund.</p>
+    </div>
+    <div data-rivela="2" data-componente="nube-orbitale" data-iniziale="2p"></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     03 · LE TRE REGOLE
+     ================================================================ -->
+<section class="scena piena regole-intro" id="regole" data-titolo="Le tre regole" data-breve="03">
+  <span class="numero-fondo" aria-hidden="true">03</span>
+  <div class="dentro">
+    <p class="occhiello" data-n="03" data-rivela>Le regole</p>
+    <h2 data-rivela>Come si riempiono <em>gli orbitali</em></h2>
+    <p class="lead" data-rivela="2" style="margin-top:20px">Gli elettroni non scelgono un orbitale a caso. Tre regole decidono dove va ciascuno.</p>
+    <ol class="tre-regole">
+      <li data-rivela><a href="#aufbau"><span class="nr">1</span><b>Energia crescente</b><span>Prima gli orbitali a energia più bassa.</span><i class="mono">principio di Aufbau</i></a></li>
+      <li data-rivela="2"><a href="#pauli"><span class="nr">2</span><b>Massimo due per orbitale</b><span>Con spin opposto.</span><i class="mono">principio di esclusione di Pauli</i></a></li>
+      <li data-rivela="3"><a href="#hund"><span class="nr">3</span><b>Prima separati</b><span>Negli orbitali con la stessa energia, uno per orbitale con spin parallelo.</span><i class="mono">regola di Hund</i></a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="scena" id="aufbau" data-titolo="Regola 1 · Aufbau" data-breve="3·1">
+  <div class="dentro">
+    <div class="testata">
+      <div>
+        <p class="occhiello" data-n="Regola 1" data-rivela>Principio di Aufbau</p>
+        <h2 data-rivela>Prima l'energia <em>più bassa</em></h2>
+      </div>
+      <div class="testo" data-rivela="2">
+        <p>Gli elettroni occupano gli orbitali in <b>ordine di energia crescente</b>: si riempie prima il sottolivello più basso, poi il successivo. <i>Aufbau</i>, in tedesco, significa «costruzione».</p>
+        <p>L'ordine non è semplicemente livello dopo livello: dal livello 3 in poi i sottolivelli si sovrappongono, e il <b>4s viene prima del 3d</b>. Per ricordarlo si usa lo schema delle diagonali.</p>
+      </div>
+    </div>
+    <div class="pannello" data-rivela="2" data-componente="aufbau"></div>
+    <p class="nota" style="margin-top:22px">Lo schema delle diagonali segue una regola precisa: si riempie prima il sottolivello con la somma <b>n + l</b> più bassa (l vale 0 per s, 1 per p, 2 per d, 3 per f); a parità di somma, quello con n più basso. Per esempio 4s (4 + 0 = 4) viene prima di 3d (3 + 2 = 5).</p>
+  </div>
+</section>
+
+<section class="scena piena" id="pauli" data-titolo="Regola 2 · Pauli" data-breve="3·2">
+  <div class="dentro griglia-2">
+    <div>
+      <p class="occhiello" data-n="Regola 2" data-rivela>Principio di esclusione di Pauli</p>
+      <h2 data-rivela>Al massimo <em>due</em> per orbitale</h2>
+      <div class="testo" data-rivela="2" style="margin-top:24px">
+        <p>Ogni elettrone ha una proprietà chiamata <b>spin</b>, che può assumere solo due valori. Si rappresenta con una freccia verso l'alto <span class="mono">↑</span> o verso il basso <span class="mono">↓</span>.</p>
+        <p>Un orbitale può contenere <b>al massimo due elettroni</b>, e i due elettroni devono avere <b>spin opposto</b>.</p>
+      </div>
+      <div data-rivela="3" data-componente="confronto" data-casi='[{"ok":true,"orb":[[1,-1]],"testo":"due elettroni, spin opposto"},{"ok":false,"orb":[[1,1]],"testo":"spin uguali"},{"ok":false,"orb":[[1,-1,1]],"testo":"tre elettroni"}]'></div>
+      <p class="nota" data-rivela="3" style="margin-top:20px">In forma generale il principio dice che in un atomo non possono esistere due elettroni con tutti e quattro i numeri quantici uguali.</p>
+    </div>
+    <div class="pannello prova" data-rivela="2">
+      <p class="mono piccolo">Prova tu · riempi un orbitale</p>
+      <div data-componente="pauli"></div>
+    </div>
+  </div>
+</section>
+
+<section class="scena piena" id="hund" data-titolo="Regola 3 · Hund" data-breve="3·3">
+  <div class="dentro griglia-2 inversa">
+    <div>
+      <p class="occhiello" data-n="Regola 3" data-rivela>Regola di Hund</p>
+      <h2 data-rivela>Prima <em>separati</em>, poi in coppia</h2>
+      <div class="testo" data-rivela="2" style="margin-top:24px">
+        <p>Quando più orbitali hanno la stessa energia, come i tre orbitali 2p, gli elettroni li occupano <b>prima uno per orbitale, con spin parallelo</b>. Solo quando ogni orbitale ne ha uno cominciano ad appaiarsi.</p>
+        <p>Esempio: il carbonio ha due elettroni nel sottolivello 2p.</p>
+      </div>
+      <div data-rivela="3" data-componente="confronto" data-casi='[{"ok":true,"orb":[[1],[1],[]],"testo":"uno per orbitale, spin parallelo"},{"ok":false,"orb":[[1,-1],[],[]],"testo":"appaiati con orbitali ancora vuoti"},{"ok":false,"orb":[[1],[-1],[]],"testo":"spin non paralleli"}]'></div>
+    </div>
+    <div class="pannello prova" data-rivela="2">
+      <p class="mono piccolo">Prova tu</p>
+      <div data-componente="hund"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     04 · COME SI SCRIVE
+     ================================================================ -->
+<section class="scena" id="scrittura" data-titolo="Come si scrive" data-breve="04">
+  <span class="numero-fondo" aria-hidden="true">04</span>
+  <div class="dentro">
+    <div class="centro">
+      <p class="occhiello centrato" data-n="04" data-rivela>La scrittura</p>
+      <h2 data-rivela>Come si legge una <em>configurazione</em></h2>
+      <p class="lead" data-rivela="2" style="margin-top:18px">Ogni termine dice tre cose. Tocca le sue parti.</p>
+    </div>
+    <div data-rivela="2" data-componente="anatomia" data-n="2" data-l="p" data-e="6"></div>
+
+    <div class="griglia-2 leggi-blocco">
+      <div>
+        <h3 data-rivela>Una configurazione completa</h3>
+        <div class="testo" data-rivela="2" style="margin-top:14px">
+          <p>I sottolivelli si scrivono uno dopo l'altro, nell'ordine in cui si riempiono, ciascuno con il numero dei suoi elettroni in esponente.</p>
+          <p><b>Controllo veloce:</b> la somma degli esponenti deve essere uguale al numero atomico Z, cioè al numero di elettroni dell'atomo neutro.</p>
+        </div>
+        <p class="nota" data-rivela="3">Alcuni libri raggruppano i sottolivelli per livello e scrivono, per esempio, <span class="cfg">3d<sup>10</sup> 4s<sup>2</sup></span> invece di <span class="cfg">4s<sup>2</sup> 3d<sup>10</sup></span>. La configurazione è la stessa: cambia solo l'ordine di scrittura.</p>
+      </div>
+      <div class="pannello" data-rivela="2" data-componente="leggi-config" data-elementi="O,Na,Cl,K,Ca" data-iniziale="K"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     05 · ESEMPI GUIDATI
+     Per aggiungere un esempio: copia un <template> e cambia data-esempio.
+     data-vuoti = quanti sottolivelli vuoti mostrare sopra l'ultimo pieno.
+     ================================================================ -->
+<section class="scena" id="esempi" data-titolo="Esempi guidati" data-breve="05">
+  <span class="numero-fondo" aria-hidden="true">05</span>
+  <div class="dentro">
+    <div class="testata">
+      <div>
+        <p class="occhiello" data-n="05" data-rivela>Esempi guidati</p>
+        <h2 data-rivela>Un elettrone <em>alla volta</em></h2>
+      </div>
+      <p class="lead" data-rivela="2">Scegli un elemento e guarda gli orbitali riempirsi seguendo le tre regole. Puoi anche procedere un elettrone alla volta.</p>
+    </div>
+    <div data-rivela="2" data-componente="esempi">
+      <template data-esempio="H" data-vuoti="1"><p class="es-nota">Un solo elettrone, nell'orbitale a energia più bassa: l'<b>1s</b>.</p></template>
+      <template data-esempio="He" data-vuoti="1"><p class="es-nota">Il secondo elettrone entra nello stesso orbitale con <b>spin opposto</b> (Pauli). Il livello 1 è completo.</p></template>
+      <template data-esempio="Li" data-vuoti="1"><p class="es-nota">Il livello 1 è pieno: il terzo elettrone va nel <b>2s</b>, il sottolivello successivo.</p></template>
+      <template data-esempio="C" data-vuoti="0"><p class="es-nota">Dopo 2s² comincia il 2p. I due elettroni 2p occupano <b>orbitali diversi con spin parallelo</b> (Hund).</p></template>
+      <template data-esempio="O" data-vuoti="0"><p class="es-nota">Quattro elettroni nel 2p: prima uno per orbitale, poi il quarto si appaia. Restano <b>due elettroni spaiati</b>.</p></template>
+      <template data-esempio="Ne" data-vuoti="1"><p class="es-nota">Il 2p è completo e il livello 2 ha 8 elettroni. Con il livello esterno pieno, il neon quasi non reagisce.</p></template>
+      <template data-esempio="K" data-vuoti="1"><p class="es-nota">Dopo il 3p non si passa al 3d: il <b>4s ha energia più bassa</b>. Il diciannovesimo elettrone va nel 4s.</p></template>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     06 · CONFIGURAZIONE ABBREVIATA
+     ================================================================ -->
+<section class="scena piena" id="abbreviata" data-titolo="Configurazione abbreviata" data-breve="06">
+  <span class="numero-fondo" aria-hidden="true">06</span>
+  <div class="dentro">
+    <div class="centro">
+      <p class="occhiello centrato" data-n="06" data-rivela>La forma breve</p>
+      <h2 data-rivela>La configurazione <em>abbreviata</em></h2>
+      <p class="lead" data-rivela="2" style="margin-top:18px">Le configurazioni lunghe cominciano tutte allo stesso modo. Quella parte si riassume con il simbolo del <b>gas nobile che precede</b> l'elemento, tra parentesi quadre.</p>
+    </div>
+    <div class="pannello abbr-pannello" data-rivela="2" data-componente="abbreviata" data-elementi="K,Na,Cl,Ca,Fe" data-iniziale="K"></div>
+    <div class="griglia-3 perche" data-rivela="3">
+      <p><b>Perché funziona.</b> Un gas nobile ha tutti i suoi sottolivelli completi. L'elemento che lo segue ha la stessa configurazione, più alcuni elettroni.</p>
+      <p><b>Come si fa.</b> Trova il gas nobile con Z più piccolo dell'elemento, scrivilo tra parentesi quadre e aggiungi solo i sottolivelli successivi.</p>
+      <p><b>A cosa serve.</b> Oltre a essere più corta, mette in evidenza gli elettroni esterni: quelli che contano per la chimica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     07 · ELETTRONI DI VALENZA
+     ================================================================ -->
+<section class="scena" id="valenza" data-titolo="Elettroni di valenza" data-breve="07">
+  <span class="numero-fondo" aria-hidden="true">07</span>
+  <div class="dentro">
+    <div class="griglia-2">
+      <div>
+        <p class="occhiello" data-n="07" data-rivela>La chimica</p>
+        <h2 data-rivela>Gli elettroni di <em>valenza</em></h2>
+      </div>
+      <p class="def" data-rivela="2">Gli elettroni di valenza sono gli elettroni del <b>livello energetico più esterno</b> di un atomo.</p>
+    </div>
+    <p class="testo" data-rivela="2" style="margin:30px 0 40px">Sono i più lontani dal nucleo e i meno trattenuti: sono loro che un atomo cede, acquista o mette in comune quando forma un legame. Per questo <b>elementi con la stessa configurazione esterna si comportano in modo simile</b>.</p>
+
+    <div data-rivela="2" data-componente="famiglie" data-famiglie='[
+      {"gruppo":"gruppo 1","titolo":"Metalli alcalini","elementi":["Li","Na","K"],"esterno":"ns¹ · 1 elettrone di valenza","comportamento":"Cedono facilmente il loro unico elettrone esterno e diventano ioni positivi (+1). Sono metalli molto reattivi."},
+      {"gruppo":"gruppo 17","titolo":"Alogeni","elementi":["F","Cl","Br"],"esterno":"ns² np⁵ · 7 elettroni di valenza","comportamento":"Manca un solo elettrone per completare il livello esterno: tendono ad acquistarlo e diventano ioni negativi (−1)."},
+      {"gruppo":"gruppo 18","titolo":"Gas nobili","elementi":["Ne","Ar","Kr"],"esterno":"ns² np⁶ · 8 elettroni di valenza","comportamento":"Livello esterno completo, configurazione molto stabile: quasi non reagiscono. L’elio ha 1s²: il suo unico livello è completo con 2 elettroni."}
+    ]'></div>
+
+    <div class="ritorno" data-rivela>
+      <div>
+        <p class="occhiello" data-n="↺">Torniamo al potassio</p>
+        <h3>Perché il potassio reagisce così facilmente</h3>
+        <p class="testo">Il potassio ha un solo elettrone di valenza, nel 4s. Cedendolo diventa lo ione K<sup>+</sup>, che ha la stessa configurazione dell'argon: tutti i livelli occupati sono completi. Per questo lo perde con tanta facilità, per esempio quando reagisce con l'acqua.</p>
+      </div>
+      <div class="ione">
+        <p><span class="ione-s">K</span><span class="cfg"><span class="t core">[Ar]</span><span class="t l-s val">4s<sup>1</sup></span></span></p>
+        <p class="ione-freccia mono">cede 1 elettrone →</p>
+        <p><span class="ione-s">K<sup>+</sup></span><span class="cfg"><span class="t core">[Ar]</span></span><span class="piccolo">come l'argon</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scena" id="esplora" data-titolo="Esplora gli elementi" data-breve="7b">
+  <div class="dentro">
+    <div class="testata">
+      <div>
+        <p class="occhiello" data-n="07" data-rivela>Laboratorio</p>
+        <h2 data-rivela>Esplora gli elementi da <em>H</em> a <em>Kr</em></h2>
+      </div>
+      <p class="lead" data-rivela="2">Tocca un elemento: vedrai la sua configurazione completa e abbreviata, gli elettroni di valenza e il diagramma degli orbitali.</p>
+    </div>
+    <div data-rivela="2" data-componente="tavola" data-iniziale="19"></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     08 · RIPASSO VELOCE E QUIZ
+     ================================================================ -->
+<section class="scena" id="ripasso" data-titolo="Ripasso veloce" data-breve="08">
+  <span class="numero-fondo" aria-hidden="true">08</span>
+  <div class="dentro">
+    <div class="testata">
+      <div>
+        <p class="occhiello" data-n="08" data-rivela>Ripasso veloce</p>
+        <h2 data-rivela>Tutto in <em>una pagina</em></h2>
+      </div>
+      <p class="lead" data-rivela="2">Le cose da sapere per la verifica e l'interrogazione.</p>
+    </div>
+
+    <div class="ripasso">
+      <article class="rip r-def" data-rivela>
+        <p class="mono rip-k">Definizione</p>
+        <p>La <b>configurazione elettronica</b> è il modo in cui gli elettroni di un atomo sono distribuiti negli orbitali.</p>
+        <p class="rip-sotto"><b>Livello</b> (n = 1, 2, 3…) → <b>sottolivello</b> (s, p, d, f) → <b>orbitale</b> (max 2 e⁻)</p>
+        <table class="rip-tab mono"><tr><td class="l-s">s</td><td>1 orbitale</td><td>2 e⁻</td></tr><tr><td class="l-p">p</td><td>3 orbitali</td><td>6 e⁻</td></tr><tr><td class="l-d">d</td><td>5 orbitali</td><td>10 e⁻</td></tr><tr><td class="l-f">f</td><td>7 orbitali</td><td>14 e⁻</td></tr></table>
+      </article>
+      <article class="rip r-regole" data-rivela="2">
+        <p class="mono rip-k">Le tre regole</p>
+        <ol>
+          <li><b>Aufbau</b> · si riempiono prima gli orbitali a energia più bassa.<span class="cfg piccolo">1s 2s 2p 3s 3p 4s 3d 4p 5s…</span></li>
+          <li><b>Pauli</b> · al massimo 2 elettroni per orbitale, con spin opposto <span class="mono">↑↓</span>.</li>
+          <li><b>Hund</b> · negli orbitali degeneri prima un elettrone per orbitale, con spin parallelo <span class="mono">↑ ↑ ↑</span>.</li>
+        </ol>
+      </article>
+      <article class="rip r-legge" data-rivela>
+        <p class="mono rip-k">Come si legge</p>
+        <p class="cfg rip-grande"><span class="l-p">3p<sup>5</sup></span></p>
+        <p>3 = livello · p = sottolivello · 5 = elettroni in quel sottolivello.</p>
+        <p>La somma degli esponenti è uguale a Z.</p>
+      </article>
+      <article class="rip r-val" data-rivela="2">
+        <p class="mono rip-k">Elettroni di valenza</p>
+        <p>Sono gli elettroni del <b>livello più esterno</b>. Decidono il comportamento chimico: elementi dello stesso gruppo hanno la stessa configurazione esterna e si comportano in modo simile.</p>
+        <p class="piccolo">Forma abbreviata: [gas nobile precedente] + elettroni in più.</p>
+      </article>
+      <article class="rip r-k" data-rivela="3">
+        <p class="mono rip-k">Esempio finale · potassio, Z = 19</p>
+        <p class="cfg rip-k-cfg"><span class="t l-s">1s<sup>2</sup></span><span class="t l-s">2s<sup>2</sup></span><span class="t l-p">2p<sup>6</sup></span><span class="t l-s">3s<sup>2</sup></span><span class="t l-p">3p<sup>6</sup></span><span class="t l-s val">4s<sup>1</sup></span></p>
+        <p class="cfg rip-k-cfg">= <span class="t core">[Ar]</span><span class="t l-s val">4s<sup>1</sup></span></p>
+        <p>Il 4s si riempie prima del 3d. Un elettrone di valenza: il potassio lo cede e diventa K<sup>+</sup>.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="scena" id="quiz" data-titolo="Quiz" data-breve="?">
+  <div class="dentro griglia-2">
+    <div>
+      <p class="occhiello" data-n="08" data-rivela>Verifica</p>
+      <h2 data-rivela>Sette domande per <em>controllare</em></h2>
+      <p class="lead" data-rivela="2" style="margin-top:18px">Scegli una risposta: vedrai subito se è giusta e perché.</p>
+    </div>
+    <!-- Per cambiare le domande modifica l'elenco qui sotto. "giusta" parte da 0 (A = 0, B = 1...). -->
+    <div class="pannello" data-rivela="2" data-componente="quiz">
+      <script type="application/json">
+      [
+        {"domanda":"Quanti elettroni può contenere al massimo un orbitale?",
+         "opzioni":["Uno","Due","Sei","Otto"], "giusta":1,
+         "spiegazione":"Per il principio di Pauli un orbitale contiene al massimo due elettroni, con spin opposto."},
+        {"domanda":"Nella scrittura 3p<sup>5</sup>, che cosa indica il 5?",
+         "opzioni":["Il livello di energia","Il numero di orbitali p","Il numero di elettroni nel sottolivello 3p","Il numero atomico"], "giusta":2,
+         "spiegazione":"L'esponente indica quanti elettroni ci sono in quel sottolivello."},
+        {"domanda":"Quale sottolivello si riempie subito dopo il 3p?",
+         "opzioni":["3d","4s","4p","3f"], "giusta":1,
+         "spiegazione":"Il 4s ha energia più bassa del 3d, quindi si riempie prima (schema delle diagonali). Il 3f non esiste."},
+        {"domanda":"Come si dispongono 3 elettroni nei tre orbitali 2p dell'azoto?",
+         "opzioni":["<span class=\"mono\">↑↓ ↑ _</span>","<span class=\"mono\">↑ ↓ ↑</span>","<span class=\"mono\">↑ ↑ ↑</span>","<span class=\"mono\">↑↓↑ _ _</span>"], "giusta":2,
+         "spiegazione":"Regola di Hund: uno per orbitale, con spin parallelo. La quarta opzione viola anche il principio di Pauli."},
+        {"domanda":"Qual è la configurazione elettronica del potassio (Z = 19)?",
+         "opzioni":["<span class=\"cfg\">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 3d<sup>1</sup></span>","<span class=\"cfg\">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 4s<sup>1</sup></span>","<span class=\"cfg\">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>7</sup></span>","<span class=\"cfg\">1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>8</sup> 3s<sup>2</sup> 3p<sup>5</sup></span>"], "giusta":1,
+         "spiegazione":"Dopo 3p<sup>6</sup> il diciannovesimo elettrone va nel 4s. Le opzioni C e D superano i 6 elettroni possibili in un sottolivello p."},
+        {"domanda":"Qual è la configurazione abbreviata del sodio (Z = 11)?",
+         "opzioni":["<span class=\"cfg\">[He] 3s<sup>1</sup></span>","<span class=\"cfg\">[Ne] 3s<sup>1</sup></span>","<span class=\"cfg\">[Ar] 3s<sup>1</sup></span>","<span class=\"cfg\">[Ne] 2s<sup>1</sup></span>"], "giusta":1,
+         "spiegazione":"Il gas nobile che precede il sodio è il neon (Z = 10). Resta un elettrone, nel 3s."},
+        {"domanda":"Quanti elettroni di valenza ha l'ossigeno (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>4</sup>)?",
+         "opzioni":["2","4","6","8"], "giusta":2,
+         "spiegazione":"Il livello più esterno è il 2: 2s<sup>2</sup> + 2p<sup>4</sup> = 6 elettroni di valenza."}
+      ]
+      </script>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Script comuni: l'ordine conta (prima catalogo, chimica e motore, poi i componenti) -->
+<script src="../../catalogo.js"></script>
+<script src="../../assets/js/chimica.js"></script>
+<script src="../../assets/js/core.js"></script>
+<script src="../../assets/js/componenti/viaggio.js"></script>
+<script src="../../assets/js/componenti/livelli.js"></script>
+<script src="../../assets/js/componenti/nube-orbitale.js"></script>
+<script src="../../assets/js/componenti/regole.js"></script>
+<script src="../../assets/js/componenti/scala-energetica.js"></script>
+<script src="../../assets/js/componenti/scrittura.js"></script>
+<script src="../../assets/js/componenti/valenza.js"></script>
+<script src="../../assets/js/componenti/quiz.js"></script>
+</body>
+</html>
